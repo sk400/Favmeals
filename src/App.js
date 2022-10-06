@@ -1,15 +1,36 @@
 import './App.css';
-import { Box } from "@mui/material"
-import { FavoriteRacipe, Navbar, Recipes } from './components';
+import { Box, Drawer, } from "@mui/material"
+import { FavoriteRacipe, MealDetail, Navbar, Recipes } from './components';
+import { useStateContext } from "./context"
 
 
 
 function App() {
+  const { mealData, dispatch } = useStateContext()
+  const { showDrawer, showModal,  } = mealData
   return (
     <Box>
-      {/* <Navbar />
-      <FavoriteRacipe /> */}
+      {showModal && <MealDetail />}
+
+      <Drawer
+        anchor="top"
+        open={showDrawer}
+        onClose={() => dispatch({ type: "setDrawer" })}
+      >
+
+
+        <FavoriteRacipe />
+
+
+      </Drawer>
+
+
+
+
+      <Navbar />
+
       <Recipes />
+
     </Box>
   );
 }
