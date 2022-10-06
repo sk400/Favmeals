@@ -1,0 +1,6 @@
+export { default as Recipes } from "./Recipes"
+export { default as Navbar } from "./Navbar"
+export { default as RecipeCard } from "./RecipeCard"
+export { default as MealDetail } from "./MealDetail"
+export { default as FavoriteRacipe } from "./FavoriteRacipe"
+export { default as Loader } from "./Loader"
